@@ -1,6 +1,6 @@
 .hero-slider {
   position: relative;
-  height: 500px;
+  height: 600px; /* زدنا الطول شوي ليعطي فخامة أكثر */
   width: 100%;
   overflow: hidden;
 }
@@ -16,65 +16,75 @@
   position: relative;
 }
 
-/* طبقة تعتيم فوق الصورة عشان النص يبين */
+/* طبقة تعتيم احترافية موحدة */
 .slide::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background: rgba(0, 39, 82, 0.6); 
+  top: 0; 
+  left: 0; 
+  right: 0; 
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* تعتيم متوازن */
+  z-index: 1;
 }
 
 .slide-content {
   position: relative;
   text-align: center;
   color: white;
-  z-index: 1;
+  z-index: 2; /* التأكد إنه فوق التعتيم */
+  max-width: 900px;
+  padding: 0 20px;
 }
 
 .slide-content h1 {
-  font-size: 3rem;
-  margin-bottom: 15px;
+  font-size: 3.5rem;
+  margin-bottom: 20px;
   font-weight: 800;
+  letter-spacing: -1px;
 }
 
 .slide-content p {
-  font-size: 1.5rem;
-  margin-bottom: 25px;
+  font-size: 1.6rem;
+  margin-bottom: 35px;
+  font-weight: 500;
+  opacity: 0.9;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .cta-button {
-  padding: 12px 30px;
-  font-size: 1.2rem;
-  background-color: #ffc107; /* لون مميز للزر */
+  padding: 15px 45px;
+  font-size: 1.3rem;
+  background-color: #ffc107; /* الأصفر الذهبي */
   color: #000;
   border: none;
-  border-radius: 5px;
+  border-radius: 8px;
   cursor: pointer;
-  font-weight: bold;
-  transition: transform 0.2s;
+  font-weight: 800; /* خط عريض وفخم */
+  font-family: 'Tajawal', sans-serif; /* تأكيد نوع الخط */
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
 }
 
 .cta-button:hover {
-  transform: scale(1.05);
+  transform: translateY(-3px);
+  background-color: #ffca28;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.3);
 }
 
+/* إخفاء الدوتس إذا كنت لا تستخدم سلايدر متحرك حالياً */
 .slider-dots {
-  position: absolute;
-  bottom: 20px;
-  width: 100%;
-  text-align: center;
+  display: none;
 }
 
-.dot {
-  display: inline-block;
-  width: 12px;
-  height: 12px;
-  margin: 0 5px;
-  background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 50%;
-  cursor: pointer;
-}
-
-.dot.active {
-  background-color: #ffffff;
+/* تضبيط المقاسات للموبايل */
+@media (max-width: 768px) {
+  .slide-content h1 { font-size: 2.2rem; }
+  .slide-content p { font-size: 1.2rem; }
+  .cta-button { padding: 12px 30px; font-size: 1.1rem; }
 }
