@@ -1,13 +1,15 @@
 import React from 'react';
 import './Header.css';
+import logoImg from '../../assets/logo.png'; // استيراد اللوغو من مجلد assets
 
 const Header = () => {
   return (
     <header className="header">
       <div className="container header-content">
         <div className="logo-container">
-          {/* حط مسار اللوغو تبعك هون */}
-          <img src="https://via.placeholder.com/150x60/004085/FFFFFF?text=Sky+Academy+Logo" alt="Sky Academy Logo" className="logo" />
+          <a href="/">
+            <img src={logoImg} alt="Sky Academy Logo" className="logo" />
+          </a>
         </div>
         <nav className="navbar">
           <ul className="nav-links">

@@ -6,20 +6,35 @@
   z-index: 1000;
 }
 
+/* شعار الأكاديمية */
+.logo {
+  height: 75px; /* جرب هاد المقاس وشوفه على اللوكال */
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease; /* أنيميشن ناعم عند مرور الماوس */
+}
+
+.logo:hover {
+  transform: scale(1.05); /* تكبير خفيف بنسبة 5% يعطي إحساس تفاعلي */
+}
+
+/* تعديل مساحة الهيدر ليتناسب مع حجم اللوغو الجديد */
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 20px;
+  padding: 10px 20px; 
   max-width: 1200px;
   margin: 0 auto;
 }
 
-.logo {
-  height: 50px;
-  object-fit: contain;
+/* لجعل الموقع متجاوب مع الموبايل */
+@media (max-width: 768px) {
+  .logo {
+    height: 55px; /* حجم أصغر قليلاً للموبايل */
+  }
 }
-
 .nav-links {
   list-style: none;
   display: flex;
