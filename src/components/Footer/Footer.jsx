@@ -11,8 +11,8 @@ const Footer = () => {
         </div>
         <div className="footer-section">
           <h3>تواصل معنا</h3>
-          <div>رقم الهاتف: 000 000 970+</div>
-          <div>البريد الإلكتروني: info@skyacademy.ps</div>
+          <div>رقم الهاتف:  416 458 568 970</div>
+          <div>البريد الإلكتروني: info@skyacademy.tech</div>
         </div>
       </div>
       <div className="footer-bottom">
