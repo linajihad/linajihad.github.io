@@ -1,0 +1,36 @@
+.footer {
+  background-color: #002752; /* كحلي غامق متناسق مع الأزرق */
+  color: #ffffff;
+  padding-top: 50px;
+}
+
+.footer-content {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
+}
+
+.footer-info h3, .footer-contact h4 {
+  margin-bottom: 15px;
+  color: #ffc107; /* لمسة بسيطة لكسر اللون */
+}
+
+.footer-info p, .footer-contact p {
+  margin-bottom: 10px;
+  color: #cccccc;
+}
+
+.footer-bottom {
+  text-align: center;
+  padding: 20px 0;
+  background-color: #001a36;
+}
+
+.footer-bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: #aaaaaa;
+}
