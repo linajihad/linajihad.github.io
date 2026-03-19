@@ -1,21 +1,22 @@
 import React from 'react';
+import { Link } from 'react-router-dom'; // استيراد Link للروابط الداخلية
 import './Header.css';
-import logoImg from '../../assets/logo.png'; // استيراد اللوغو من مجلد assets
+import logoImg from '../../assets/logo.png';
 
 const Header = () => {
   return (
     <header className="header">
       <div className="container header-content">
         <div className="logo-container">
-          <a href="/">
+          <Link to="/">
             <img src={logoImg} alt="Sky Academy Logo" className="logo" />
-          </a>
+          </Link>
         </div>
         <nav className="navbar">
           <ul className="nav-links">
-            <li><a href="#home" className="active">الرئيسية</a></li>
-            <li><a href="#courses">الدورات</a></li>
-            <li><a href="#posts">المنشورات</a></li>
+            <li><Link to="/">الرئيسية</Link></li>
+            <li><Link to="/course-details">تفاصيل الدورة</Link></li>
+            <li><Link to="/register" className="nav-register-btn">سجل في الدورة</Link></li>
           </ul>
         </nav>
       </div>

@@ -1,36 +1,40 @@
 .footer {
-  background-color: #002752; /* كحلي غامق متناسق مع الأزرق */
-  color: #ffffff;
-  padding-top: 50px;
+  background-color: #001f3f; /* أزرق غامق جداً */
+  color: white;
+  padding: 60px 0 20px;
+  font-family: 'Tajawal', sans-serif;
 }
 
-.footer-content {
+.footer-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
   display: flex;
   justify-content: space-between;
   flex-wrap: wrap;
-  gap: 30px;
-  padding-bottom: 30px;
-  border-bottom: 1px solid rgba(255,255,255,0.1);
+  gap: 40px;
 }
 
-.footer-info h3, .footer-contact h4 {
-  margin-bottom: 15px;
-  color: #ffc107; /* لمسة بسيطة لكسر اللون */
+.footer-section {
+  flex: 1;
+  min-width: 250px;
 }
 
-.footer-info p, .footer-contact p {
-  margin-bottom: 10px;
-  color: #cccccc;
+.footer-section h3 {
+  color: #ffc107;
+  margin-bottom: 20px;
+  font-size: 1.5rem;
+}
+
+.footer-section p, .footer-section div {
+  line-height: 1.8;
+  opacity: 0.9;
 }
 
 .footer-bottom {
   text-align: center;
-  padding: 20px 0;
-  background-color: #001a36;
-}
-
-.footer-bottom p {
-  margin: 0;
+  margin-top: 50px;
+  padding-top: 20px;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   font-size: 0.9rem;
-  color: #aaaaaa;
 }

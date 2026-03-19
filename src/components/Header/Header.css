@@ -52,3 +52,16 @@
 .nav-links a:hover, .nav-links a.active {
   color: #0056b3; /* لون أزرق متناسق مع اللوغو */
 }
+.nav-register-btn {
+  background-color: #ffc107;
+  color: #002752 !important;
+  padding: 8px 20px;
+  border-radius: 5px;
+  font-weight: 800;
+  transition: 0.3s;
+}
+
+.nav-register-btn:hover {
+  background-color: #e0a800;
+  transform: translateY(-2px);
+}
