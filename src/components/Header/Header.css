@@ -4,41 +4,40 @@
   position: sticky;
   top: 0;
   z-index: 1000;
+  width: 100%;
 }
 
-/* شعار الأكاديمية */
-.logo {
-  height: 75px; /* جرب هاد المقاس وشوفه على اللوكال */
-  width: auto;
-  object-fit: contain;
-  display: block;
-  transition: transform 0.3s ease; /* أنيميشن ناعم عند مرور الماوس */
-}
-
-.logo:hover {
-  transform: scale(1.05); /* تكبير خفيف بنسبة 5% يعطي إحساس تفاعلي */
-}
-
-/* تعديل مساحة الهيدر ليتناسب مع حجم اللوغو الجديد */
+/* محتوى الهيدر - التنظيم الأساسي */
 .header-content {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 10px 20px; 
+  padding: 10px 20px;
   max-width: 1200px;
   margin: 0 auto;
 }
 
-/* لجعل الموقع متجاوب مع الموبايل */
-@media (max-width: 768px) {
-  .logo {
-    height: 55px; /* حجم أصغر قليلاً للموبايل */
-  }
+/* شعار الأكاديمية */
+.logo {
+  height: 75px; 
+  width: auto;
+  object-fit: contain;
+  display: block;
+  transition: transform 0.3s ease;
 }
+
+.logo:hover {
+  transform: scale(1.05);
+}
+
+/* القائمة البريدية */
 .nav-links {
   list-style: none;
   display: flex;
+  align-items: center; /* لضمان محاذاة النص مع الزر */
   gap: 30px;
+  margin: 0;
+  padding: 0;
 }
 
 .nav-links a {
@@ -47,11 +46,14 @@
   font-weight: 600;
   font-size: 1.1rem;
   transition: color 0.3s ease;
+  white-space: nowrap; /* يمنع انقسام النص لسطرين */
 }
 
 .nav-links a:hover, .nav-links a.active {
-  color: #0056b3; /* لون أزرق متناسق مع اللوغو */
+  color: #0056b3;
 }
+
+/* زر "سجل في الدورة" الخاص بالمنيو */
 .nav-register-btn {
   background-color: #ffc107;
   color: #002752 !important;
@@ -59,9 +61,49 @@
   border-radius: 5px;
   font-weight: 800;
   transition: 0.3s;
+  display: inline-block;
 }
 
 .nav-register-btn:hover {
   background-color: #e0a800;
   transform: translateY(-2px);
+}
+
+/* --- حل مشاكل الموبايل (Responsive Design) --- */
+
+@media (max-width: 768px) {
+  .header-content {
+    flex-direction: column; /* ترتيب اللوجو فوق المنيو */
+    gap: 15px;
+    padding: 15px 10px;
+  }
+
+  .logo {
+    height: 55px; /* حجم أصغر للموبايل */
+  }
+
+  .nav-links {
+    gap: 15px; /* تقليل المسافة بين الروابط */
+    width: 100%;
+    justify-content: center; /* توسيط الروابط */
+  }
+
+  .nav-links a {
+    font-size: 0.95rem; /* تصغير الخط ليتناسب مع العرض المتاح */
+  }
+
+  .nav-register-btn {
+    padding: 6px 15px; /* تصغير حجم الزر قليلاً */
+    font-size: 0.9rem;
+  }
+}
+
+/* حل إضافي للشاشات الصغيرة جداً (مثل iPhone SE) */
+@media (max-width: 400px) {
+  .nav-links {
+    gap: 10px;
+  }
+  .nav-links a {
+    font-size: 0.85rem;
+  }
 }
