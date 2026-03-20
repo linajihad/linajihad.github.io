@@ -76,7 +76,7 @@ const Register = () => {
               </div>
               <div className="form-group">
                 <label>رقم التواصل (WhatsApp)</label>
-                <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} placeholder="05XXXXXXXX" />
+                <input type="tel" name="phone" required value={formData.phone} onChange={handleChange} placeholder="0XXXXXXXXX" />
               </div>
             </div>
 
