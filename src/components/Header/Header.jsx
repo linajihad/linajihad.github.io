@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom'; // استيراد Link للروابط الداخلية
+import { Link } from 'react-router-dom'; 
 import './Header.css';
 import logoImg from '../../assets/logo.png';
 
@@ -16,7 +16,8 @@ const Header = () => {
           <ul className="nav-links">
             <li><Link to="/">الرئيسية</Link></li>
             <li><Link to="/course-details">تفاصيل الدورة</Link></li>
-            <li><Link to="/register" className="nav-register-btn">سجل في الدورة</Link></li>
+            <li><Link to="/FAQ">الأسئلة الشائعة</Link></li> 
+            <li><Link to="/register" className="nav-register-btn">سجل الآن</Link></li>
           </ul>
         </nav>
       </div>

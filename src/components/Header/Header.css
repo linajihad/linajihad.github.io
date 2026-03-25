@@ -1,3 +1,4 @@
+/* الهيدر الأساسي */
 .header {
   background-color: #ffffff;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
@@ -30,14 +31,18 @@
   transform: scale(1.05);
 }
 
-/* القائمة البريدية */
+/* القائمة البريدية (الروابط) */
 .nav-links {
   list-style: none;
   display: flex;
-  align-items: center; /* لضمان محاذاة النص مع الزر */
+  align-items: center; 
   gap: 30px;
   margin: 0;
   padding: 0;
+}
+
+.nav-links li {
+  display: inline-block;
 }
 
 .nav-links a {
@@ -46,7 +51,7 @@
   font-weight: 600;
   font-size: 1.1rem;
   transition: color 0.3s ease;
-  white-space: nowrap; /* يمنع انقسام النص لسطرين */
+  white-space: nowrap; 
 }
 
 .nav-links a:hover, .nav-links a.active {
@@ -67,6 +72,7 @@
 .nav-register-btn:hover {
   background-color: #e0a800;
   transform: translateY(-2px);
+  color: #002752 !important;
 }
 
 /* --- حل مشاكل الموبايل (Responsive Design) --- */
@@ -86,19 +92,20 @@
     gap: 15px; /* تقليل المسافة بين الروابط */
     width: 100%;
     justify-content: center; /* توسيط الروابط */
+    flex-wrap: wrap; /* لضمان عدم خروج الروابط عن الشاشة */
   }
 
   .nav-links a {
-    font-size: 0.95rem; /* تصغير الخط ليتناسب مع العرض المتاح */
+    font-size: 0.95rem; 
   }
 
   .nav-register-btn {
-    padding: 6px 15px; /* تصغير حجم الزر قليلاً */
+    padding: 6px 15px; 
     font-size: 0.9rem;
   }
 }
 
-/* حل إضافي للشاشات الصغيرة جداً (مثل iPhone SE) */
+/* حل إضافي للشاشات الصغيرة جداً */
 @media (max-width: 400px) {
   .nav-links {
     gap: 10px;
