@@ -18,6 +18,8 @@ const Header = () => {
             <li><Link to="/course-details">تفاصيل الدورة</Link></li>
             <li><Link to="/FAQ">الأسئلة الشائعة</Link></li> 
             <li><Link to="/register" className="nav-register-btn">سجل الآن</Link></li>
+            <li><Link to="/About">عن المحاضر</Link></li>
+
           </ul>
         </nav>
       </div>

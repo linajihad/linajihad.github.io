@@ -14,8 +14,6 @@
   padding: 50px;
   border-radius: 30px;
   box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-  position: relative;
-  overflow: hidden;
 }
 
 .register-header {
@@ -36,21 +34,21 @@
 
 .register-header h2 {
   color: #002752;
-  font-size: 2.4rem;
+  font-size: 2.2rem;
   font-weight: 900;
   margin: 0;
 }
 
 .section-title {
   color: #0056b3;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   border-bottom: 2px solid #f0f0f0;
   padding-bottom: 10px;
   margin: 30px 0 20px;
 }
 
 .form-group {
-  margin-bottom: 22px;
+  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
 }
@@ -59,91 +57,108 @@
   font-weight: 700;
   color: #444;
   margin-bottom: 8px;
-  font-size: 0.95rem;
+  font-size: 0.9rem;
 }
 
 .register-form input, .register-form select, .register-form textarea {
-  padding: 14px;
+  padding: 12px;
   border: 2px solid #edf2f7;
-  border-radius: 12px;
+  border-radius: 10px;
   font-family: 'Tajawal', sans-serif;
-  font-size: 1rem;
+  font-size: 0.95rem;
   background: #f8fafc;
-  transition: all 0.3s;
 }
 
-.register-form input:focus {
-  border-color: #ffc107;
-  background: #fff;
-  outline: none;
-  box-shadow: 0 0 0 4px rgba(255, 193, 7, 0.1);
+.phone-input-wrapper { display: flex; gap: 8px; }
+.prefix-select { width: 110px; }
+.phone-main { flex: 1; }
+
+.radio-group { display: flex; gap: 25px; padding: 5px 0; }
+.radio-group label { display: flex; align-items: center; gap: 6px; cursor: pointer; font-weight: 500; }
+
+/* --- تصميم النوت الخاص بالدفع --- */
+.payment-info-note {
+  background: #f1f5f9;
+  border-radius: 15px;
+  padding: 20px;
+  margin: 30px 0;
+  border: 1px solid #e2e8f0;
 }
 
-.phone-input-wrapper {
+.payment-note-title {
+  font-weight: 800;
+  color: #1e293b;
+  font-size: 0.95rem;
+  display: block;
+  margin-bottom: 8px;
+}
+
+.payment-text {
+  font-size: 0.85rem;
+  color: #475569;
+  margin-bottom: 15px;
+}
+
+.payment-logos-flex {
   display: flex;
+  align-items: center;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.payment-group {
+  display: flex;
+  align-items: center;
   gap: 10px;
 }
 
-.prefix-select { width: 120px; }
-.other-prefix { width: 80px; }
-.phone-main { flex: 1; }
-
-.radio-group {
-  display: flex;
-  gap: 30px;
-  padding: 10px 0;
+.payment-group img {
+  height: 24px;
+  width: auto;
+  object-fit: contain;
 }
 
-.radio-group label {
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  cursor: pointer;
-  font-weight: 500;
+.payment-group span {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: #64748b;
 }
 
+.payment-divider {
+  width: 1px;
+  height: 20px;
+  background: #cbd5e1;
+}
+
+/* باقي التنسيقات */
 .info-box {
-  background: #fff9e6;
-  padding: 15px;
-  border-radius: 12px;
-  border-right: 5px solid #ffc107;
-  margin: 20px 0;
   text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 20px;
 }
 
-.info-box a {
-  color: #0056b3;
-  text-decoration: underline;
-  font-weight: bold;
-}
+.info-box a { color: #0056b3; font-weight: bold; }
 
 .submit-btn {
   width: 100%;
-  padding: 18px;
-  background: linear-gradient(90deg, #ffc107 0%, #ffdb4d 100%);
+  padding: 16px;
+  background: #ffc107;
   color: #002752;
   border: none;
-  border-radius: 15px;
-  font-size: 1.3rem;
+  border-radius: 12px;
+  font-size: 1.2rem;
   font-weight: 900;
   cursor: pointer;
   transition: 0.3s;
-  box-shadow: 0 10px 20px rgba(255, 193, 7, 0.2);
 }
 
-.submit-btn:hover {
-  transform: translateY(-3px);
-  box-shadow: 0 15px 30px rgba(255, 193, 7, 0.4);
-}
+.submit-btn:hover { background: #eab308; }
 
-.form-row {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
+.form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
 
 @media (max-width: 600px) {
   .form-row { grid-template-columns: 1fr; }
-  .register-card { padding: 30px 20px; }
-  .register-header h2 { font-size: 1.8rem; }
+  .register-card { padding: 30px 15px; }
+  .payment-logos-flex { flex-direction: column; align-items: flex-start; gap: 10px; }
+  .payment-divider { display: none; }
 }

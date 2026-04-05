@@ -1,11 +1,14 @@
 import React, { useState } from 'react';
 import './Register.css';
+import cliqLogo from '../../assets/cliq_logo.png';
+import reflectLogo from '../../assets/reflect_logo.png';
+import bopLogo from '../../assets/bop_logo.png';
 
 const Register = () => {
   const [formData, setFormData] = useState({
     name: '',
     age: '',
-    residence: '', // تم التبديل هنا
+    residence: '',
     phonePrefix: '+970',
     otherPrefix: '',
     phone: '',
@@ -36,7 +39,6 @@ const Register = () => {
       const form = new FormData();
       Object.keys(dataToSubmit).forEach(key => form.append(key, dataToSubmit[key]));
       
-      // mode: 'no-cors' ضروري للتعامل مع Google Apps Script
       await fetch(scriptURL, { method: 'POST', body: form, mode: 'no-cors' });
       setIsSuccess(true);
     } catch (error) {
@@ -53,7 +55,7 @@ const Register = () => {
         <div className="success-card">
           <div className="success-icon">✓</div>
           <h2>تم إرسال طلبك بنجاح!</h2>
-          <p>شكراً لانضمامك لـ <strong>Sky Academy</strong>. فريقنا سيتواصل معك عبر الواتساب خلال 24 ساعة.</p>
+          <p>شكراً لانضمامك لـ <strong>Sky Academy</strong>. فريقنا سيتواصل معك عبر الواتساب خلال 24 ساعة لتأكيد الحجز ومتابعة الدفع.</p>
           <button onClick={() => window.location.href='/'} className="back-home-btn">العودة للرئيسية</button>
         </div>
       </div>
@@ -67,12 +69,10 @@ const Register = () => {
           <div className="register-header">
             <span className="course-badge">تكلفة الدورة: 200$</span>
             <h2>تقديم طلب للتسجيل في الدورة</h2>
-            <p>سيتم التواصل معك بعد تقديمك للطلب</p>
+            <p>سيتم مراجعة طلبك والتواصل معك عبر الواتساب</p>
           </div>
 
           <form onSubmit={handleSubmit} className="register-form">
-            
-            {/* القسم الأول: البيانات الشخصية */}
             <div className="form-section">
               <h3 className="section-title">1. البيانات الشخصية</h3>
               <div className="form-group">
@@ -108,7 +108,6 @@ const Register = () => {
               </div>
             </div>
 
-            {/* القسم الثاني: الخلفية التقنية والتعليم */}
             <div className="form-section">
               <h3 className="section-title">2. الخلفية التعليمية والتقنية</h3>
               <div className="form-row">
@@ -151,19 +150,41 @@ const Register = () => {
                   </div>
                 </div>
               </div>
+
+              <div className="form-group">
+                <label>لماذا تريد التسجيل في الدورة؟</label>
+                <textarea name="reason" rows="4" value={formData.reason} onChange={handleChange} placeholder="أخبرنا عن هدفك من الدورة..."></textarea>
+              </div>
             </div>
 
-            <div className="form-group">
-              <label>لماذا تريد التسجيل في الدورة؟</label>
-              <textarea name="reason" rows="4" value={formData.reason} onChange={handleChange} placeholder="أخبرنا عن هدفك من الدورة..."></textarea>
+            {/* ملاحظة وسائل الدفع - خارج خطوات التسجيل */}
+            <div className="payment-info-note">
+              <div className="payment-note-header">
+                <span className="payment-note-title">ملاحظة حول وسائل الدفع المتاحة:</span>
+              </div>
+              <p className="payment-text">
+                عند قبول طلبك، سيتم تزويدك بتفاصيل التحويل عبر الواتساب. يمكنك الدفع من خلال:
+              </p>
+              <div className="payment-logos-flex">
+                <div className="payment-group">
+                  <img src={bopLogo} alt="BOP" />
+                  <img src={reflectLogo} alt="Reflect" />
+                  <span>(فلسطين)</span>
+                </div>
+                <div className="payment-divider"></div>
+                <div className="payment-group">
+                  <img src={cliqLogo} alt="CliQ" />
+                  <span>(الأردن)</span>
+                </div>
+              </div>
             </div>
 
             <div className="info-box">
-              <p>متردد في التسجيل؟ <a href="/FAQ" target="_blank" rel="noreferrer">اقرأ هذه الصفحة</a></p>
+              <p>متردد في التسجيل؟ <a href="/FAQ" target="_blank" rel="noreferrer">اقرأ صفحة الأسئلة الشائعة</a></p>
             </div>
 
             <button type="submit" className="submit-btn" disabled={isSubmitting}>
-              {isSubmitting ? 'جاري معالجة طلبك...' : 'قدم طلب التسجيل'}
+              {isSubmitting ? 'جاري معالجة طلبك...' : 'إرسال طلب التسجيل'}
             </button>
           </form>
         </div>

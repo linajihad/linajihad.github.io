@@ -9,6 +9,7 @@ import Methodology from './components/Methodology/Methodology';
 import Register from './components/Register/Register';
 import CourseDetails from './components/CourseDetails/CourseDetails'; // السطر الجديد
 import FAQ from './components/FAQ/FAQ'; // السطر الجديد
+import About from './components/About/About';
 function App() {
   return (
     <Router>
@@ -32,6 +33,7 @@ function App() {
             <Route path="/register" element={<Register />} />
             {/* صفحة الأسئلة الشائعة */}
             <Route path="/FAQ" element={<FAQ />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </main>
 
